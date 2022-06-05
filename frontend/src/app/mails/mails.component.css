@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+}
+
+.sucesss-status-badge {
+  background-color: green; 
+  color: white; 
+  padding: 5px; 
+  border-radius: 2px;
+}
+
+.failed-status-badge {
+  background-color: red; 
+  color: white; 
+  padding: 5px; 
+  border-radius: 2px;
+}
+
+.pending-status-badge {
+  background-color: blue; 
+  color: white; 
+  padding: 5px; 
+  border-radius: 2px;
+}

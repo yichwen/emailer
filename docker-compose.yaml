@@ -1,0 +1,39 @@
+version: "3.3"
+services:
+  mail-frontend:
+    image: "mail-frontend:latest"
+    container_name: mail-frontend
+    restart: unless-stopped
+    ports:
+     - 4200:80
+    networks:
+     - default
+  mail-service:
+    image: "mail-service:latest"
+    container_name: mail-service
+    restart: unless-stopped
+    ports:
+     - 9000:9000
+    networks:
+     - default
+    environment:
+     - "spring.h2.console.settings.web-allow-others=true"
+  mail-provider-1:
+    image: "mail-provider:latest"
+    container_name: mail-provider-1
+    restart: unless-stopped
+    ports:
+     - 9001:9001
+    environment:
+     - "api-key=owgwoi9202bg23"
+  mail-provider-2:
+    image: "mail-provider:latest"
+    container_name: mail-provider-2
+    restart: unless-stopped
+    ports:
+     - 9002:9001
+    environment:
+     - "api-key=sdibviuw983"
+
+networks:
+  default:

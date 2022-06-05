@@ -1,0 +1,48 @@
+<div style="width:90%; margin: 5px auto;">
+  <mat-card class="example-card">
+    <mat-card-title style="padding: 10px 0px;">New Message</mat-card-title>
+    <mat-card-content>
+      <p class="p-no-margin" style="display:flex; justify-content: space-between;">
+        <mat-form-field style="width:48%;">
+          <mat-label>From</mat-label>
+          <input matInput placeholder="John Doe" [(ngModel)]="mail.fromName">
+        </mat-form-field>
+        <mat-form-field style="width:48%;">
+          <mat-label>From (email)</mat-label>
+          <input matInput placeholder="johndoe@mail.com" [(ngModel)]="mail.fromEmail">
+        </mat-form-field>
+      </p>
+      <p class="p-no-margin" style="display:flex; justify-content: space-between;">
+        <mat-form-field style="width:48%;">
+          <mat-label>To</mat-label>
+          <input matInput placeholder="Mary Jane" [(ngModel)]="mail.toName">
+        </mat-form-field>
+        <mat-form-field style="width:48%;">
+          <mat-label>To (email)</mat-label>
+          <input matInput placeholder="maryjane@mail.com" [(ngModel)]="mail.toEmail">
+        </mat-form-field>
+      </p>
+      <p class="p-no-margin">
+        <mat-form-field style="width:100%">
+          <mat-label>Subject</mat-label>
+          <input matInput placeholder="to be super clear" [(ngModel)]="mail.subject">
+        </mat-form-field>
+      </p>
+      <p class="p-no-margin">
+        <mat-form-field class="example-full-width">
+          <mat-label>Write your message</mat-label>
+          <textarea matInput placeholder="It makes me feel..."
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="19" [(ngModel)]="mail.message"></textarea>
+        </mat-form-field>
+      </p>
+      <p>
+        <button mat-flat-button color="accent" (click)="send()">Send</button>
+      </p>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</div>
